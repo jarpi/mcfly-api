@@ -1,0 +1,114 @@
+{
+	"variables": [],
+	"info": {
+		"name": "mcfly-api",
+		"_postman_id": "1c4ad4eb-0912-c9b8-ece3-5f2a17ce5c51",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create note",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"note_id\", jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/note",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"A note\",\n\t\"body\":\"A body\", \n\t\"isFav\":\"false\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get notes",
+			"request": {
+				"url": "http://localhost:8080/notes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"A note\",\n\t\"body\":\"A body\", \n\t\"isFav\":\"false\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get favorite notes",
+			"request": {
+				"url": "http://localhost:8080/notes/favs",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get note detail",
+			"request": {
+				"url": "http://localhost:8080/note/{{note_id}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Set favorite note",
+			"request": {
+				"url": "http://localhost:8080/note/{{note_id}}/fav",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

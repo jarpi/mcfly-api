@@ -11,3 +11,9 @@
 	- User should be able to set a note as favorite
 	- User should be able to retrieve favorite notes
 
+## TODO
+	- Improve search by boolean field efficiency, now is using a table scan (probably using a relation collection)
+	- Add users, each user should have his own notes
+	- Add authentication
+	- Add functional tests
+	- Improve view error handling (then()...catch())
