@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
 	"debug": "node ./node_modules/nodemon/bin/nodemon.js index.js",
-    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec spec/ && codecov"
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha  -- -R spec lib/spec/ && codecov"
   },
   "author": "@jarpi",
   "license": "AGPL-3.0",
