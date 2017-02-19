@@ -1,0 +1,10 @@
+# mcfly-api
+
+## Constraints:
+	- User should be able to call the api
+	- User should be able to create a note
+	- User should be able to retrieve a single note (detail)
+	- User should be able to retrieve all notes
+	- User should be able to set a note as favorite
+	- User should be able to retrieve favorite notes
+
